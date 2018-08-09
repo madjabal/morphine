@@ -12,11 +12,11 @@ Q = SECURITY_PARAMETER**5
 HINT_SUBSET_SIZE = floor(SECURITY_PARAMETER/log2(SECURITY_PARAMETER)) # ALPHA
 HINT_SIZE = 2 * HINT_SUBSET_SIZE
 
-PK_SIZE = 15 # This is the number of encryptions of zero in the public key
+PK_SIZE = 1 # This is the number of encryptions of zero in the public key
 
 # need to tweak the following 2 parameters such that the maximum noise of an asymmetric cyphertext is <= than that of a symmetric one
 PK_M_BIT_LENGTH = 3
-PK_SUBSET_SIZE = 4 #5 works almost with 2 mults
+PK_SUBSET_SIZE = 1 #5 works almost with 2 mults
 # Todo: work through math (instead of finding values empirically)
 # When computing asymmetric encryption we perform (PK_SUBSET_SIZE + 1) sums of elements
 # whose noise is at most PK_M_BIT_LENGTH bits long.
@@ -29,3 +29,5 @@ if __name__ == '__main__':
 	print('N, P, Q:', N, P, Q)
 	print('HINT_SUBSET_SIZE:', HINT_SUBSET_SIZE)
 	print('HINT_SIZE:', HINT_SIZE)
+
+NUM_BITS = 32
